@@ -1,0 +1,11 @@
+
+### INSTALL DOCKER ON AMAZON LINUX
+
+```
+sudo yum update -y
+sudo yum install -y docker
+sudo service docker start
+sudo systemctl enable docker
+sudo usermod -a -G docker jenkins-slave1
+sudo setfacl -m user:jenkins-slave1:rw /var/run/docker.sock
+sudo service docker status 
